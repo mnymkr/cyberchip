@@ -2,24 +2,39 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-
-    <title>Number guessing game</title>
-
-    <style>
-      html {
-        font-family: sans-serif;
-      }
-
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Cyberchip</title>
   </head>
 
   <body>
 
+    <table id="player_status_table">
+      <tr id="player_name_row">
+        <td>Player</td>
+        <td>One</td>
+      </tr>
+      <tr id="player_chips_row">
+        <td>Chips</td>
+        <td>15</td>
+      </tr>
+    </table>
+
+    <div id="new_player_name_form">
+
+      <label for="new_player_name_input">New player name:</label><br>
+      <textarea type="text" id="new_player_name_input" name="new_player_name_input"></textarea>
+      <br>
+
+      <label for="game_chip">Chips:</label><br>
+      <textarea type="text" id="game_chips" name="game_chips"></textarea>
+
+      <button id="add_player_button" onclick="add_player()">Add Player</button>
+      <br>
+
+      <br>
+      <button id="remove_player_button">Remove Player</button>
+
+    </div>
+    <script src="scripts.js"></script>
   </body>
 </html>
