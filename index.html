@@ -7,37 +7,59 @@
   </head>
 
   <body>
-    <!-- New game inputs -->
-    <table id="player_status_table">
-      <tr id="player_name_row">
-        <td>Players</td>
-      </tr>
-      <tr id="player_chips_row">
-        <td>Chips</td>
-      </tr>
-    </table>
+    <!-- Enter game's chip -->
+    <section id="starting_chip_section">
+      <textarea id="starting_chip_textarea" 
+        onkeypress="confirm_starting_chip()" 
+        cols="30" 
+        rows="1" 
+        autofocus 
+        placeholder="Enter chip number" 
+        type="text" 
+        name="starting_chip_textarea" 
+        autofocus></textarea>
+      <button id="confirm_starting_chip_button" onclick="confirm_starting_chip_button()">Proceed</button>
+    </section>
 
-    <div id="new_player_name_form">
+    <!-- Game body -->
+    <section id="game_body_section" 
+              style="display:none">
 
-      <label for="new_player_name_input">New player name:</label><br>
-      <textarea type="text" id="new_player_name_input" name="new_player_name_input" autofocus></textarea>
-      <br>
+      <!-- Player name table -->
+      <table id="player_status_table">
+        <tr id="player_name_row">
+          <td>Name</td>
+        </tr>
+        <tr id="player_chips_row">
+          <td>Chips</td>
+        </tr>
+      </table>
 
-      <label for="game_chip">Chips:</label><br>
-      <textarea type="text" id="game_chips" name="game_chips"></textarea>
+      <!-- Add/Drop players -->
+      <div id="new_player_name_form">
 
-      <button id="add_player_button" onclick="add_player()">Add Player</button>
-      <br>
+        <label for="new_player_name_input">New player name:</label><br>
+        <textarea type="text" 
+                  id="new_player_name_input" 
+                  rows="1"
+                  name="new_player_name_input" 
+                  placeholder="player name"
+                  onkeypress="add_player()" 
+                  autofocus></textarea>
+        <br>
+        <button id="add_player_button" onclick="add_player_button()">Add Player</button>
+        <button id="remove_player_button" onclick="remove_player()">Remove Player</button>
+        <br>
+        <button id="start_game" onclick="start_game()">Start Game</button>
+      </div>
 
-      <br>
-      <button id="remove_player_button" onclick="remove_player()">Remove Player</button>
-      <button id="start_game" onclick="start_game()">Start Game</button>
-    </div>
+      <!-- Buttons for making actions in game -->
+      <div id="game_control_button" style="display:none">
+        <button id="quit_game_button" onclick="quit_game()">Quit Game</button>
+      </div>
 
-    <!-- Game -->
-    <div id="game_body" style="display:none">
-      <button id="quit_game_button" onclick="quit_game()">Quit Game</button>
-    </div>
+    </section>
+
     <script src="scripts.js"></script>
   </body>
 </html>
