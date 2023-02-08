@@ -7,22 +7,20 @@
   </head>
 
   <body>
-
+    <!-- New game inputs -->
     <table id="player_status_table">
       <tr id="player_name_row">
-        <td>Player</td>
-        <td>One</td>
+        <td>Players</td>
       </tr>
       <tr id="player_chips_row">
         <td>Chips</td>
-        <td>15</td>
       </tr>
     </table>
 
     <div id="new_player_name_form">
 
       <label for="new_player_name_input">New player name:</label><br>
-      <textarea type="text" id="new_player_name_input" name="new_player_name_input"></textarea>
+      <textarea type="text" id="new_player_name_input" name="new_player_name_input" autofocus></textarea>
       <br>
 
       <label for="game_chip">Chips:</label><br>
@@ -32,8 +30,13 @@
       <br>
 
       <br>
-      <button id="remove_player_button">Remove Player</button>
+      <button id="remove_player_button" onclick="remove_player()">Remove Player</button>
+      <button id="start_game" onclick="start_game()">Start Game</button>
+    </div>
 
+    <!-- Game -->
+    <div id="game_body" style="display:none">
+      <button id="quit_game_button" onclick="quit_game()">Quit Game</button>
     </div>
     <script src="scripts.js"></script>
   </body>
