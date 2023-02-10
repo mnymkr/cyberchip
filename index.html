@@ -53,11 +53,21 @@
         <button id="start_game" onclick="start_game()">Start Game</button>
       </div>
 
-      <!-- Buttons for making actions in game -->
-      <div id="game_control_button" style="display:none">
-        <button id="quit_game_button" onclick="quit_game()">Quit Game</button>
-      </div>
+      <button form="game_body_section" id="quit_game_button" onclick="quit_game()">Quit Game</button>
 
+    </section>
+
+    <section id="game_turn_section" style="display:none">
+      <p>It's <span id="current_player_name_span"></span>'s turn!</p>
+      <br>
+      <!-- Buttons for making actions in game -->
+      <form id="game_control_button">
+        <button id="check_button" form="game_body_section" onclick="action(this.id)">Check</button>
+        <button id="bet_button" form="game_body_section" onclick="action(this.id)">Bet</button>
+        <button id="fold_button" form="game_body_section" onclick="action(this.id)">Fold</button>
+        <button id="call_button" form="game_body_section" onclick="action(this.id)">Call</button>
+        <button id="raise_button" form="game_body_section" onclick="action(this.id)">Raise</button>
+      </form>
     </section>
 
     <script src="scripts.js"></script>
